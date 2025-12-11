@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: my-ip
+  name: my-ip
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-ip
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: my-ip
+    spec:
+      containers:
+      - image: pavan1309/ip-display
+        name: ip-display
+        resources: {}
+status: {}
